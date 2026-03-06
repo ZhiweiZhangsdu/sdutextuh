@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>论文摘要</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; }
+        #abstract-container { border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+        .back-link { margin-top: 20px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <div id="abstract-container">
+        <h1 id="paper-title"></h1>
+        <p id="paper-authors"></p>
+        <p id="paper-abstract"></p>
+    </div>
+    <a href="seminars.html" class="back-link">← 返回列表</a>
+
+    <script>
+        // 获取URL中的id参数
+        const urlParams = new URLSearchParams(window.location.search);
+        const paperId = urlParams.get('id');
+
+        // 如果没有id，显示错误信息
+        if (!paperId) {
+            document.getElementById('abstract-container').innerHTML = '<p style="color:red;">错误：未指定论文ID。</p>';
+        } else {
+            // 加载摘要数据文件
+            fetch('data/abstracts.json')
+                .then(response => response.json())
+                .then(data => {
+                    const paper = data[paperId];
+                    if (paper) {
+                        document.getElementById('paper-title').textContent = paper.title;
+                        document.getElementById('paper-authors').textContent = '作者：' + paper.authors;
+                        document.getElementById('paper-abstract').textContent = paper.abstract;
+                    } else {
+                        document.getElementById('abstract-container').innerHTML = '<p style="color:red;">未找到该论文的摘要。</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('加载摘要数据失败:', error);
+                    document.getElementById('abstract-container').innerHTML = '<p style="color:red;">加载数据失败，请稍后重试。</p>';
+                });
+        }
+    </script>
+</body>
+</html>
