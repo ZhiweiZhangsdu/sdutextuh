@@ -44,7 +44,7 @@ All time in this webpage refers to Beijing Time (GMT+8).
     2026
   </div>
   <div class="seminar-content">
-    <strong>Title:</strong> <a href="abstract.html?id=paper1">论文标题 1</a><br/>
+    <strong>Title:</strong> <a href="abstract.html?id=paper1">Zhiwei Zhang</a><br/>
     <strong>Speaker:</strong> Prof. <a href="https://www.ibs.re.kr/ecopro/hongliu/" target="_blank" rel="noopener">Hong Liu</a><br/>
     <strong>Time:</strong> 16:00–17:30<br/>
     <strong>Venue:</strong> Room 301, Mathematics Building / Online (Zoom)
