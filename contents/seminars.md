@@ -29,31 +29,7 @@ Participants interested in receiving seminar announcements by email are welcome 
 
 All time in this webpage refers to Beijing Time (GMT+8).
 
-<style>
-.seminar-item {
-  display: flex;
-  align-items: stretch;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
-}
 
-.seminar-date {
-  min-width: 110px;
-  padding: 1rem 0.75rem;
-  background: #f8f9fa;
-  border-radius: 12px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.seminar-content {
-  flex: 1;
-  line-height: 1.8;
-}
-</style>
 
 ### Upcoming Talks
 
