@@ -364,3 +364,34 @@ section .main-body{
     width: 100%;
   }
 }
+
+.faculty-row {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.faculty-card {
+  width: 180px;
+  text-align: center;
+}
+
+.faculty-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.faculty-name a {
+  font-weight: 700;
+  text-decoration: none;
+  color: #1e3c72;
+}
+
+.faculty-name a:hover {
+  text-decoration: underline;
+}
