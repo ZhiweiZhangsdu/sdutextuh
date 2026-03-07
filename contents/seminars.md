@@ -35,8 +35,8 @@ All time in this webpage refers to Beijing Time (GMT+8).
 
 <div class="seminar-item">
   <div class="seminar-date">
-    <strong>Mar 12</strong><br/>
-    2026
+<strong style="font-size: 24px;">Mar 12</strong><br/>
+    <span style="font-size: 16px;">2026</span>
   </div>
   <div class="seminar-content">
     <strong>Title:</strong> <a href="abstract.html?id=1" target="_blank">Zhiwei Zhang</a><br/>
