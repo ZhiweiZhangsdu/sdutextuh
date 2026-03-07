@@ -166,151 +166,138 @@
     </footer>
 
     <script>
-        (async function() {
-            // 获取URL参数 id
-            const urlParams = new URLSearchParams(window.location.search);
-            const id = urlParams.get('id');
+    (async function() {
+        // 工具函数：转义 HTML（放在最前面，确保所有地方都能访问）
+        function escapeHtml(unsafe) {
+            if (!unsafe) return unsafe;
+            return unsafe
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
 
-            const container = document.getElementById('abstract-container');
-            const loadingSpinner = document.getElementById('loading-spinner');
-            const actionButtonsDiv = document.getElementById('action-buttons');
-            const copyTextBtn = document.getElementById('copy-text-btn');
-            const copyScreenshotBtn = document.getElementById('copy-screenshot-btn');
+        // 获取 URL 参数 id
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
 
-            // 如果没有id，直接显示错误
-            if (!id) {
-                if (loadingSpinner) loadingSpinner.style.display = 'none';
-                container.innerHTML = `
-                    <div class="alert alert-warning text-center py-5" role="alert">
-                        <i class="bi bi-exclamation-triangle" style="font-size: 3rem;"></i>
-                        <h3 class="mt-3">缺少ID参数</h3>
-                        <p>请在URL中指定 ?id=xxx</p>
-                        <a href="seminars.html" class="btn btn-primary mt-3">返回研讨会列表</a>
-                    </div>
-                `;
-                return;
+        const container = document.getElementById('abstract-container');
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const actionButtonsDiv = document.getElementById('action-buttons');
+        // 注意：复制文字按钮已不存在，因此不再获取 copyTextBtn
+        const copyScreenshotBtn = document.getElementById('copy-screenshot-btn');
+
+        // 如果没有 id，直接显示错误
+        if (!id) {
+            if (loadingSpinner) loadingSpinner.style.display = 'none';
+            container.innerHTML = `
+                <div class="alert alert-warning text-center py-5" role="alert">
+                    <i class="bi bi-exclamation-triangle" style="font-size: 3rem;"></i>
+                    <h3 class="mt-3">缺少ID参数</h3>
+                    <p>请在URL中指定 ?id=xxx</p>
+                    <a href="seminars.html" class="btn btn-primary mt-3">返回研讨会列表</a>
+                </div>
+            `;
+            return;
+        }
+
+        try {
+            // 从外部 JSON 文件加载数据
+            const response = await fetch('static/data/abstracts.json');
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status} - 无法加载数据文件`);
+            }
+            const abstractsData = await response.json();
+
+            const data = abstractsData[id];
+            if (!data) {
+                throw new Error(`ID "${id}" 不存在`);
             }
 
-            try {
-                // 从外部JSON文件加载数据
-                // 数据文件路径可以根据需要修改，这里假设放在 static/data/abstracts.json
-                const response = await fetch('static/data/abstracts.json');
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status} - 无法加载数据文件`);
-                }
-                const abstractsData = await response.json();
+            // 构建卡片 HTML（abstract 和 bio 可能包含 LaTeX，不转义）
+            const cardHtml = `
+                <div id="abstract-card" class="abstract-card">
+                    <div class="name">${escapeHtml(data.name) || '未知'}</div>
+                    <div class="title">${escapeHtml(data.title) || '无标题'}</div>
+                    <div class="date"><i class="bi bi-calendar-event"></i> ${escapeHtml(data.date) || ''}</div>
+                    <div class="abstract-label">Abstract</div>
+                    <div class="abstract-content fs-5 mb-4">${data.abstract || ''}</div>
+                    ${data.bio ? `<div class="abstract-label">Introduction</div><div class="bio-content">${data.bio}</div>` : ''}
+                </div>
+            `;
 
-                // 根据id获取对应条目
-                const data = abstractsData[id];
-                if (!data) {
-                    throw new Error(`ID "${id}" 不存在`);
-                }
+            loadingSpinner.style.display = 'none';
+            container.innerHTML = cardHtml;
+            actionButtonsDiv.style.display = 'flex';
 
-                // 构建卡片HTML（注意abstract和bio中可能包含LaTeX，直接用）
-                const cardHtml = `
-                    <div id="abstract-card" class="abstract-card">
-                        <div class="name">${escapeHtml(data.name) || '未知'}</div>
-                        <div class="title">${escapeHtml(data.title) || '无标题'}</div>
-                        <div class="date"><i class="bi bi-calendar-event"></i> ${escapeHtml(data.date) || ''}</div>
-                        <div class="abstract-label">Abstract</div>
-                        <div class="abstract-content fs-5 mb-4">${data.abstract || ''}</div>
-                        ${data.bio ? `<div class="abstract-label">Introduction</div><div class="bio-content">${data.bio}</div>` : ''}
-                    </div>
-                `;
+            // 触发 MathJax 渲染（只调用一次）
+            if (window.MathJax) {
+                await MathJax.typesetPromise([container]).catch(console.error);
+            }
 
-                // 隐藏加载动画，显示卡片
-                if (loadingSpinner) loadingSpinner.style.display = 'none';
-                container.innerHTML = cardHtml;
-                actionButtonsDiv.style.display = 'flex';
+            // ---------- 复制截图功能 ----------
+            copyScreenshotBtn.addEventListener('click', async function() {
+                const cardElement = document.getElementById('abstract-card');
+                if (!cardElement) return;
 
+                // 再次确保 MathJax 渲染完成（可选）
                 if (window.MathJax) {
-    MathJax.typesetPromise([container]).catch(console.error);
-}
-
-                // 触发MathJax重新渲染（确保公式正确显示）
-                if (window.MathJax) {
-                    MathJax.typesetPromise ? MathJax.typesetPromise() : MathJax.typeset();
+                    await MathJax.typesetPromise([cardElement]).catch(console.error);
                 }
 
-                // ---------- 复制文字功能 ----------
-                copyTextBtn.addEventListener('click', async function() {
-                    let textToCopy = `报告人：${data.name || ''}\n`;
-                    textToCopy += `标题：${data.title || ''}\n`;
-                    textToCopy += `日期：${data.date || ''}\n`;
-                    textToCopy += `摘要：${(data.abstract || '').replace(/\$+/g, '')}`; // 移除$符号便于阅读
-                    if (data.bio) {
-                        textToCopy += `\n简介：${data.bio}`;
-                    }
-                    try {
-                        await navigator.clipboard.writeText(textToCopy);
-                        alert('文字已复制到剪贴板');
-                    } catch (err) {
-                        alert('复制失败，请手动复制');
-                    }
-                });
-
-                // ---------- 复制截图功能 ----------
-                copyScreenshotBtn.addEventListener('click', function() {
-                    const cardElement = document.getElementById('abstract-card');
-                    if (!cardElement) return;
-
-                    html2canvas(cardElement, {
-                        scale: 2,
-                        backgroundColor: '#ffffff',
-                        allowTaint: false,
-                        useCORS: true
-                    }).then(canvas => {
-                        canvas.toBlob(async function(blob) {
-                            try {
-                                await navigator.clipboard.write([
-                                    new ClipboardItem({
-                                        [blob.type]: blob
-                                    })
-                                ]);
-                                alert('截图已复制到剪贴板');
-                            } catch (err) {
-                                console.error(err);
-                                alert('复制截图失败，可能是因为浏览器不支持或权限不足。');
+                html2canvas(cardElement, {
+                    scale: 2,
+                    backgroundColor: '#ffffff',
+                    allowTaint: false,
+                    useCORS: true
+                }).then(canvas => {
+                    canvas.toBlob(async function(blob) {
+                        try {
+                            await navigator.clipboard.write([
+                                new ClipboardItem({
+                                    [blob.type]: blob
+                                })
+                            ]);
+                            alert('✅ 截图已复制到剪贴板');
+                        } catch (err) {
+                            console.error(err);
+                            // 降级方案：在新窗口显示图片，让用户手动保存
+                            const imgUrl = canvas.toDataURL('image/png');
+                            const newWindow = window.open();
+                            if (newWindow) {
+                                newWindow.document.write(`<img src="${imgUrl}" style="max-width:100%" alt="截图"><p>右键图片选择“另存为”保存截图</p>`);
+                            } else {
+                                alert('❌ 无法自动复制，请手动截图。');
                             }
-                        });
-                    }).catch(error => {
-                        console.error('截图失败:', error);
-                        alert('截图生成失败，请稍后重试。');
-                    });
+                        }
+                    }, 'image/png');
+                }).catch(error => {
+                    console.error('截图失败:', error);
+                    alert('❌ 截图生成失败：' + error.message);
                 });
+            });
 
-                // 简单的防XSS转义函数（用于非HTML内容的输出）
-                function escapeHtml(unsafe) {
-                    if (!unsafe) return unsafe;
-                    return unsafe
-                        .replace(/&/g, "&amp;")
-                        .replace(/</g, "&lt;")
-                        .replace(/>/g, "&gt;")
-                        .replace(/"/g, "&quot;")
-                        .replace(/'/g, "&#039;");
-                }
+        } catch (error) {
+            loadingSpinner.style.display = 'none';
+            container.innerHTML = `
+                <div class="alert alert-danger text-center py-5" role="alert">
+                    <i class="bi bi-exclamation-triangle" style="font-size: 3rem;"></i>
+                    <h3 class="mt-3">加载失败</h3>
+                    <p>${escapeHtml(error.message)}</p>
+                    <a href="seminars.html" class="btn btn-primary mt-3">返回研讨会列表</a>
+                </div>
+            `;
+        }
 
-            } catch (error) {
-                // 处理加载或解析错误
-                if (loadingSpinner) loadingSpinner.style.display = 'none';
-                container.innerHTML = `
-                    <div class="alert alert-danger text-center py-5" role="alert">
-                        <i class="bi bi-exclamation-triangle" style="font-size: 3rem;"></i>
-                        <h3 class="mt-3">加载失败</h3>
-                        <p>${escapeHtml(error.message)}</p>
-                        <a href="seminars.html" class="btn btn-primary mt-3">返回研讨会列表</a>
-                    </div>
-                `;
-            }
-
-            // 设置版权年份
-            const copyrightEl = document.getElementById('copyright-text');
-            if (copyrightEl) {
-                const year = new Date().getFullYear();
-                copyrightEl.innerHTML = `© ${year} SDU Combinatorics Group. All rights reserved.`;
-            }
-        })();
-    </script>
+        // 设置版权年份
+        const copyrightEl = document.getElementById('copyright-text');
+        if (copyrightEl) {
+            const year = new Date().getFullYear();
+            copyrightEl.innerHTML = `© ${year} SDU Combinatorics Group. All rights reserved.`;
+        }
+    })();
+</script>
 </body>
 
 </html>
