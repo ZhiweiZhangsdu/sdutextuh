@@ -66,8 +66,7 @@ All time in this webpage refers to Beijing Time (GMT+8).
 
   <div class="seminar-content">
     <strong>Title:</strong>
-    <a href="abstract.html?id=1" target="_blank">Zhiwei Zhang</a><br />
-
+    <a href="abstract.html?id=1" target="_blank">Zhiwei Zhang</a><br/>
     <strong>Speaker:</strong>
     Prof.
     <a href="https://www.ibs.re.kr/ecopro/hongliu/" target="_blank" rel="noopener">Hong Liu</a><br />
