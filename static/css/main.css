@@ -23,10 +23,10 @@ body{
 
 .top-section {
     position: relative;
-    padding: 10rem 0;
     background-position: center;
     background-size: cover;
-    height: 10rem;
+    height: 220px;
+    padding: 0;
 }
 
 .top-section h2 {
