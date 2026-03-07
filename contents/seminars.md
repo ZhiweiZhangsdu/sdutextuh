@@ -21,7 +21,7 @@ Participants interested in receiving seminar announcements by email are welcome 
   <tbody>
     <tr>
       <td>Zoom</td>
-      <td>632 7868 8120</td>
+      <td><a href="https://syddanskuni.zoom.us/j/63278688120?pwd=yMJb3DVFAt3oT5zHuQfw8Uau0CZPrb.1" target="_blank" rel="noopener">632 7868 8120</a></td>
       <td>SDUCOMB</td>
     </tr>
   </tbody>
