@@ -22,10 +22,10 @@
                 "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
                 Arial, sans-serif;
 
-            --theme-red-dark: #8b1e2d;
-            --theme-red: #b22222;
-            --theme-red-soft: #fdf2f2;
-            --theme-red-muted: #7a4b4b;
+--theme-blue-dark: #1e3c72;
+--theme-blue: #2a5298;
+--theme-blue-soft: #eef4ff;
+--theme-blue-muted: #6c757d;
         }
     </style>
 
@@ -70,14 +70,14 @@
             padding: 2rem;
             margin-bottom: 2rem;
             position: relative;
-            border-top: 4px solid var(--theme-red);
+            border-top: 4px solid var(--theme-blue);
             color: #2b2b2b;
         }
 
         .abstract-card .name {
             font-size: 2rem;
             font-weight: 700;
-            color: var(--theme-red-dark);
+            color: var(--theme-blue-dark);
             line-height: 1.25;
             padding-right: 26%;
         }
@@ -85,22 +85,22 @@
         .abstract-card .title {
             font-size: 1.5rem;
             font-style: italic;
-            color: var(--theme-red);
+            color: var(--theme-blue);
             margin-top: 0.5rem;
             line-height: 1.4;
             padding-right: 26%;
         }
 
         .abstract-card .date {
-            color: var(--theme-red-muted);
+            color: var(--theme-blue-muted);
             margin-bottom: 1.5rem;
             margin-top: 0.75rem;
         }
 
         .abstract-card .abstract-label {
             font-weight: 700;
-            color: var(--theme-red-dark);
-            border-bottom: 2px solid var(--theme-red);
+            color: var(--theme-blue-dark);
+            border-bottom: 2px solid var(--theme-blue);
             display: inline-block;
             margin-bottom: 1rem;
             padding-bottom: 0.15rem;
@@ -113,13 +113,13 @@
         }
 
         .btn-outline-primary {
-            border-color: var(--theme-red);
-            color: var(--theme-red);
+            border-color: var(--theme-blue);
+            color: var(--theme-blue);
         }
 
         .btn-outline-primary:hover {
-            background-color: var(--theme-red);
-            border-color: var(--theme-red);
+            background-color: var(--theme-blue);
+            border-color: var(--theme-blue);
             color: #fff;
         }
 
@@ -133,8 +133,8 @@
         }
 
         .zoom-info {
-            border-left: 4px solid var(--theme-red);
-            background-color: var(--theme-red-soft);
+            border-left: 4px solid var(--theme-blue);
+            background-color: var(--theme-blue-soft);
             font-size: 0.95rem;
             margin-top: 1.5rem;
             padding: 1rem;
@@ -142,7 +142,7 @@
         }
 
         .zoom-info i {
-            color: var(--theme-red);
+            color: var(--theme-blue);
             margin-right: 0.3rem;
         }
 
@@ -235,7 +235,7 @@
 
             <div class="d-flex gap-3 justify-content-center mt-4" id="action-buttons" style="display: none;">
                 <button class="btn btn-outline-primary btn-lg" id="copy-screenshot-btn">
-                    <i class="bi bi-share"></i> 分享(Share)
+                     分享(Share)
                 </button>
             </div>
         </div>
@@ -352,7 +352,7 @@
 
                         <div class="name">${safeHtml(data.name, '未知')}</div>
                         <div class="title">${safeHtml(data.title, '无标题')}</div>
-                        <div class="date"><i class="bi bi-calendar-event"></i> ${escapeHtml(data.date || '')}</div>
+                        <div class="date"> ${escapeHtml(data.date || '')}</div>
 
                         <div class="abstract-label">Abstract</div>
                         <div class="abstract-content fs-5 mb-4">${safeHtml(data.abstract, '')}</div>
