@@ -1,5 +1,32 @@
 ## Principal Investigator
-**Prof. <a href="https://faculty.sdu.edu.cn/wangguanghui1/zh_CN/index.htm" target="_blank" rel="noopener">Prof. Guanghui Wang</a>**  
+<div class="faculty-row">
+  <div class="faculty-card">
+    <img src="static/assets/img/photo.png" alt="Prof. Guanghui Wang" class="faculty-photo">
+    <div class="faculty-name">
+      <a href="https://faculty.sdu.edu.cn/wangguanghui1/zh_CN/index.htm" target="_blank" rel="noopener">
+        Prof. Guanghui Wang
+      </a>
+    </div>
+  </div>
+
+  <div class="faculty-card">
+    <img src="static/assets/img/photo.png" alt="Prof. Person 2" class="faculty-photo">
+    <div class="faculty-name">
+      <a href="https://example.com/person2" target="_blank" rel="noopener">
+        Prof. Person 2
+      </a>
+    </div>
+  </div>
+
+  <div class="faculty-card">
+    <img src="static/assets/img/photo.png" alt="Prof. Person 3" class="faculty-photo">
+    <div class="faculty-name">
+      <a href="https://example.com/person3" target="_blank" rel="noopener">
+        Prof. Person 3
+      </a>
+    </div>
+  </div>
+</div>
 Professor, Shandong University  
 
 ---
