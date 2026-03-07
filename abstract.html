@@ -44,6 +44,19 @@
                 tags: 'all'
             }
         };
+
+              // 简单的防XSS转义函数（用于非HTML内容的输出）
+                function escapeHtml(unsafe) {
+                    if (!unsafe) return unsafe;
+                    return unsafe
+                        .replace(/&/g, "&amp;")
+                        .replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;")
+                        .replace(/"/g, "&quot;")
+                        .replace(/'/g, "&#039;");
+                }
+
+        
     </script>
     <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -279,16 +292,7 @@
                     });
                 });
 
-                // 简单的防XSS转义函数（用于非HTML内容的输出）
-                function escapeHtml(unsafe) {
-                    if (!unsafe) return unsafe;
-                    return unsafe
-                        .replace(/&/g, "&amp;")
-                        .replace(/</g, "&lt;")
-                        .replace(/>/g, "&gt;")
-                        .replace(/"/g, "&quot;")
-                        .replace(/'/g, "&#039;");
-                }
+  
 
             } catch (error) {
                 // 处理加载或解析错误
