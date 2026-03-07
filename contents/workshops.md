@@ -15,8 +15,8 @@ Unless otherwise stated, all dates and times refer to Beijing Time (GMT+8).
 ### 2026
 
 - **Workshop on Extremal and Probabilistic Combinatorics**  <a href="https://space.bilibili.com/1131132367?spm_id_from=333.999.0.0" target="_blank" rel="noopener">
-      website
-    </a>
+      website</a><br/>
+      
   *Location:* Jinan, China  *Date:* May 12–14, 2026  
   
 
