@@ -53,10 +53,10 @@ All time in this webpage refers to Beijing Time (GMT+8).
 ### Previous Talks
 
 <div class="seminar-item">
- <div class="seminar-date">
-  <div class="seminar-month">Mar 12</div>
-  <div class="seminar-year">2026</div>
-</div>
+  <div class="seminar-date">
+    <strong style="font-size: 17px;">Mar 12</strong><br />
+    <span style="font-size: 17px;">2026</span>
+  </div>
 
   <div class="seminar-content">
     <strong>Title:</strong>
