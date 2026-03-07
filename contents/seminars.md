@@ -63,7 +63,7 @@ All time in this webpage refers to Beijing Time (GMT+8).
     <a href="https://space.bilibili.com/1131132367?spm_id_from=333.999.0.0"
        target="_blank" rel="noopener">
        Link
-    </a>
+    </a><br/>
     <strong>Speaker:</strong> Prof. 
     <a href="https://sites.google.com/view/jaehoon-kim"
        target="_blank" rel="noopener">
