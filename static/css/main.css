@@ -214,31 +214,7 @@ section .main-body{
 }
 
 
-.seminar-item {
-    display: flex;
-    align-items: flex-start;
-    border-bottom: 1px solid #ddd;
-    padding: 12px 0;
-    margin-bottom: 12px;
-}
 
-.seminar-date {
-    width: 90px;
-    min-width: 90px;
-    border: 2px solid #333;
-    border-radius: 8px;
-    text-align: center;
-    padding: 6px 4px;
-    margin-right: 16px;
-    font-size: 14px;
-    color: #003399;
-}
-
-.seminar-content {
-    flex: 1;                 /* ⭐ 关键这一行 */
-    line-height: 1.6;
-    font-size: 15px;
-}
 
 .item-poster img {
     width: 140px;
@@ -263,27 +239,36 @@ section .main-body{
 }
 
 .seminar-item {
-  display: flex;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: 120px 1fr;
   gap: 1rem;
   margin-bottom: 1.25rem;
+  align-items: stretch;
 }
 
 .seminar-date {
-  min-width: 110px;
-  padding: 1rem 0.75rem;
+  padding: 0.9rem 0.75rem;
   background: #f8f9fa;
-  border-radius: 12px;
+  border: 2px solid #444;
+  border-radius: 16px;
   text-align: center;
+  box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
+  justify-content: flex-start;   /* 不要再用 center */
+  align-items: center;
+}
+
+.seminar-date strong,
+.seminar-date span {
+  line-height: 1.4;
 }
 
 .seminar-content {
-  flex: 1;
-  line-height: 1.8;
+  line-height: 1.7;
+  padding-top: 0.15rem;          /* 微调到和左边更齐 */
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
