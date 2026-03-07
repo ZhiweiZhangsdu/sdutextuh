@@ -45,8 +45,7 @@ All time in this webpage refers to Beijing Time (GMT+8).
     <strong>Speaker:</strong>
     Prof.
     <a href="https://www.ibs.re.kr/ecopro/hongliu/" target="_blank" rel="noopener">Hong Liu</a><br />
-    <strong>Time:</strong> 16:00–17:30<br />
-    <strong>Venue:</strong> Room 301, Mathematics Building / Online (Zoom)
+    <strong>Time:</strong> 16:00–17:3     <strong>Venue:</strong> Room 301, Mathematics Building / Online (Zoom)
   </div>
 </div>
 
@@ -60,8 +59,7 @@ All time in this webpage refers to Beijing Time (GMT+8).
 
   <div class="seminar-content">
     <strong>Title:</strong>
-    The Hypergraph Removal Process<br />
-    <strong>Video:</strong>
+    The Hypergraph Removal Process    <strong>Video:</strong>
     <a href="https://space.bilibili.com/1131132367?spm_id_from=333.999.0.0" target="_blank" rel="noopener">
       Link
     </a><br />
@@ -69,7 +67,6 @@ All time in this webpage refers to Beijing Time (GMT+8).
     <a href="https://sites.google.com/view/jaehoon-kim" target="_blank" rel="noopener">
       Jaehoon Kim
     </a><br />
-    <strong>Time:</strong> 17:05–18:15<br />
-    <strong>Venue:</strong> Online (Zoom)
+    <strong>Time:</strong> 17:05–18:15  <strong>Venue:</strong> Online (Zoom)
   </div>
 </div>
