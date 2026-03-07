@@ -3,7 +3,7 @@
 ### 2026
 
 - <span class="news-tag paper">Paper</span>  
-  Our paper *“Title of the Paper”* has been accepted by  
+   <h3 id="news-20260312">Our paper *“Title of the Paper”* has been accepted by </h3> 
   *Journal Name*, 2026.  
   [arXiv](https://arxiv.org/abs/xxxx.xxxxx)
 
