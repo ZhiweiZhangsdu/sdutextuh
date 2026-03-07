@@ -27,7 +27,7 @@ Participants interested in receiving seminar announcements by email are welcome 
   </tbody>
 </table>
 
-All time in this webpage refers to Beijing Time (GMT+8).  
+All time in this webpage refers to Beijing Time (GMT+8).
 
 <style>
 .seminar-item {
@@ -79,12 +79,12 @@ All time in this webpage refers to Beijing Time (GMT+8).
 <div class="seminar-item">
   <div class="seminar-date">
     <strong style="font-size: 20px;">Dec 16</strong><br />
-    <span style="font-size: 20px;">2026</span>
+    <span style="font-size: 20px;">2025</span>
   </div>
 
   <div class="seminar-content">
     <strong>Title:</strong>
-    The Hypergraph Removal Process
+    The Hypergraph Removal Process<br />
     <strong>Video:</strong>
     <a href="https://space.bilibili.com/1131132367?spm_id_from=333.999.0.0" target="_blank" rel="noopener">
       Link
@@ -97,8 +97,3 @@ All time in this webpage refers to Beijing Time (GMT+8).
     <strong>Venue:</strong> Online (Zoom)
   </div>
 </div>
-
-
-
-
-
