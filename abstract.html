@@ -226,6 +226,10 @@
                 container.innerHTML = cardHtml;
                 actionButtonsDiv.style.display = 'flex';
 
+                if (window.MathJax) {
+    MathJax.typesetPromise([container]).catch(console.error);
+}
+
                 // 触发MathJax重新渲染（确保公式正确显示）
                 if (window.MathJax) {
                     MathJax.typesetPromise ? MathJax.typesetPromise() : MathJax.typeset();
