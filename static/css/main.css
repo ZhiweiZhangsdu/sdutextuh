@@ -256,7 +256,7 @@ section .main-body{
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;   /* 不要再用 center */
+  justify-content:  center;   /* 不要再用 center */
   align-items: center;
 }
 
