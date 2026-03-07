@@ -41,8 +41,8 @@
 ### 2024
 
 - <span class="news-tag conference">Conference</span>  
-  <div id="news-20260312" class="news-entry">
-     Members of our group participated in  
-  *International Workshop on Discrete Mathematics*,  
-  April 2024, Shanghai, China.
-  </div>
+<div id="news-20260312" class="news-entry">
+   Members of our group participated in  
+*International Workshop on Discrete Mathematics*,  
+April 2024, Shanghai, China.
+</div>
