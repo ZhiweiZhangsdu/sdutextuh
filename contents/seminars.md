@@ -30,33 +30,52 @@ Participants interested in receiving seminar announcements by email are welcome 
 All time in this webpage refers to Beijing Time (GMT+8).  
 
 ---
-
-### Upcoming Talks
-
+<style>
 .seminar-item {
-    display: flex;           /* 开启 Flex 布局 */
-    align-items: stretch;    /* 默认值，让子项在交叉轴上拉伸等高 */
-    gap: 20px;               /* 可选：日期框与内容框之间的间距 */
+  display: flex;
+  align-items: stretch;   /* 关键：左右两块等高 */
+  gap: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .seminar-date {
-    min-width: 120px;        /* 根据设计调整日期框宽度 */
-    padding: 10px;           /* 内边距让内容不贴边 */
-    background-color: #f8f9fa; /* 可选背景色，便于观察等高效果 */
-    border-radius: 8px;      /* 可选圆角 */
-    /* 如果希望日期文字在框内垂直居中 */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;  /* 垂直居中 */
+  min-width: 110px;
+  padding: 1rem 0.75rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* 日期内容垂直居中 */
+  flex-shrink: 0;
 }
 
 .seminar-content {
-    flex: 1;                 /* 让内容框占据剩余宽度 */
-    padding: 10px;
-    background-color: #ffffff;
-    border: 1px solid #eee;  /* 可选边框 */
-    border-radius: 8px;
+  flex: 1;
+  line-height: 1.8;
 }
+</style>
+### Upcoming Talks
+
+<div class="seminar-item">
+  <div class="seminar-date">
+    <strong style="font-size: 20px;">Mar 12</strong><br />
+    <span style="font-size: 20px;">2026</span>
+  </div>
+
+  <div class="seminar-content">
+    <strong>Title:</strong>
+    <a href="abstract.html?id=1" target="_blank">Zhiwei Zhang</a><br />
+
+    <strong>Speaker:</strong>
+    Prof.
+    <a href="https://www.ibs.re.kr/ecopro/hongliu/" target="_blank" rel="noopener">Hong Liu</a><br />
+
+    <strong>Time:</strong> 16:00–17:30<br />
+    <strong>Venue:</strong> Room 301, Mathematics Building / Online (Zoom)
+  </div>
+</div>
 
 
 
