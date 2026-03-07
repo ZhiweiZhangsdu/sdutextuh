@@ -366,24 +366,24 @@ section .main-body{
 }
 
 .faculty-row {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   margin: 1.5rem 0;
+  align-items: start;
 }
 
 .faculty-card {
-  width: 180px;
   text-align: center;
 }
 
 .faculty-photo {
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  width: 180px;
+  height: 160px;
   object-fit: cover;
   border-radius: 12px;
   display: block;
-  margin-bottom: 0.75rem;
+  margin: 0 auto 0.75rem auto;
 }
 
 .faculty-name a {
@@ -394,4 +394,10 @@ section .main-body{
 
 .faculty-name a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .faculty-row {
+    grid-template-columns: 1fr;
+  }
 }
