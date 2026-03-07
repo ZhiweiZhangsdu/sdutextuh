@@ -1,5 +1,5 @@
 ## Principal Investigator
-**Prof. [Guanghui Wang](https://faculty.sdu.edu.cn/wangguanghui1/zh_CN/index.htm)**  
+**Prof. <a href="https://faculty.sdu.edu.cn/wangguanghui1/zh_CN/index.htm" target="_blank" rel="noopener">Prof. Guanghui Wang</a>**  
 Professor, Shandong University  
 
 ---
