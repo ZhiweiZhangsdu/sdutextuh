@@ -22,10 +22,10 @@
                 "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
                 Arial, sans-serif;
 
---theme-blue-dark: #1e3c72;
---theme-blue: #2a5298;
---theme-blue-soft: #eef4ff;
---theme-blue-muted: #6c757d;
+            --theme-blue-dark: #1e3c72;
+            --theme-blue: #2a5298;
+            --theme-blue-soft: #eef4ff;
+            --theme-blue-muted: #6c757d;
         }
     </style>
 
@@ -155,7 +155,7 @@
             overflow: visible !important;
         }
 
-        #abstract-card mjx-container[jax="SVG"]>svg {
+        #abstract-card mjx-container[jax="SVG"] > svg {
             vertical-align: middle !important;
         }
 
@@ -228,14 +228,14 @@
             <div id="abstract-container">
                 <div class="text-center py-5" id="loading-spinner">
                     <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">加载中...(Loading...)</span>
+                        <span class="visually-hidden">Loading...</span>
                     </div>
                 </div>
             </div>
 
             <div class="d-flex gap-3 justify-content-center mt-4" id="action-buttons" style="display: none;">
                 <button class="btn btn-outline-primary btn-lg" id="copy-screenshot-btn">
-                     分享(Share)
+                    Share
                 </button>
             </div>
         </div>
@@ -322,9 +322,9 @@
                 container.innerHTML = `
                     <div class="alert alert-warning text-center py-5" role="alert">
                         <i class="bi bi-exclamation-triangle" style="font-size: 3rem;"></i>
-                        <h3 class="mt-3">缺少ID参数</h3>
-                        <p>请在URL中指定 ?id=xxx</p>
-                        <a href="seminars.html" class="btn btn-primary mt-3">返回研讨会列表</a>
+                        <h3 class="mt-3">Missing ID Parameter</h3>
+                        <p>Please specify ?id=xxx in the URL.</p>
+                        <a href="seminars.html" class="btn btn-primary mt-3">Back to Seminar List</a>
                     </div>
                 `;
                 return;
@@ -333,14 +333,14 @@
             try {
                 const response = await fetch('static/data/abstracts.json', { cache: 'no-store' });
                 if (!response.ok) {
-                    throw new Error(`HTTP ${response.status} - 无法加载数据文件`);
+                    throw new Error(`HTTP ${response.status} - Failed to load data file`);
                 }
 
                 const abstractsData = await response.json();
                 const data = abstractsData[id];
 
                 if (!data) {
-                    throw new Error(`ID "${id}" 不存在`);
+                    throw new Error(`ID "${id}" does not exist`);
                 }
 
                 const zoomMeetingId = "632 7868 8120";
@@ -350,9 +350,9 @@
                     <div id="abstract-card" class="abstract-card">
                         <img src="static/assets/img/SDU-logo.png" alt="Logo" class="card-logo">
 
-                        <div class="name">${safeHtml(data.name, '未知')}</div>
-                        <div class="title">${safeHtml(data.title, '无标题')}</div>
-                        <div class="date"> ${escapeHtml(data.date || '')}</div>
+                        <div class="name">${safeHtml(data.name, 'Unknown')}</div>
+                        <div class="title">${safeHtml(data.title, 'Untitled')}</div>
+                        <div class="date">${escapeHtml(data.date || '')}</div>
 
                         <div class="abstract-label">Abstract</div>
                         <div class="abstract-content fs-5 mb-4">${safeHtml(data.abstract, '')}</div>
@@ -360,7 +360,8 @@
                         ${data.bio ? `<div class="abstract-label">Introduction</div><div class="bio-content">${data.bio}</div>` : ''}
 
                         <div class="zoom-info">
-                            <strong>Zoom Meeting:</strong>  &nbsp;&nbsp;&nbsp;&nbsp;  Meeting ID: ${zoomMeetingId}            &nbsp;&nbsp;&nbsp;&nbsp;                Passcode: ${zoomPasscode}
+                            <strong>Zoom Meeting:</strong>&nbsp;&nbsp;&nbsp;&nbsp;Meeting ID: ${zoomMeetingId}
+                            &nbsp;&nbsp;&nbsp;&nbsp;Passcode: ${zoomPasscode}
                         </div>
                     </div>
                 `;
@@ -379,7 +380,7 @@
 
                     const originalText = button.innerHTML;
                     button.disabled = true;
-                    button.innerHTML = `<i class="bi bi-hourglass-split"></i> 生成中...`;
+                    button.innerHTML = `<i class="bi bi-hourglass-split"></i> Generating...`;
 
                     try {
                         await waitForMathReady(card);
@@ -398,7 +399,7 @@
 
                         try {
                             await copyImageBlobToClipboard(blob);
-                            alert('✅ 截图已复制到剪贴板');
+                            alert('✅ Screenshot copied to clipboard.');
                         } catch (clipboardError) {
                             const newWindow = window.open();
                             if (newWindow) {
@@ -431,12 +432,12 @@
                                 `);
                                 newWindow.document.close();
                             } else {
-                                alert('截图已生成，但浏览器阻止了新窗口打开。');
+                                alert('The screenshot was generated, but your browser blocked the new window.');
                             }
                         }
                     } catch (error) {
-                        console.error('截图生成失败:', error);
-                        alert('截图生成失败，请查看控制台报错信息。');
+                        console.error('Failed to generate screenshot:', error);
+                        alert('Failed to generate screenshot. Please check the console for details.');
                     } finally {
                         button.disabled = false;
                         button.innerHTML = originalText;
@@ -448,9 +449,9 @@
                 container.innerHTML = `
                     <div class="alert alert-danger text-center py-5" role="alert">
                         <i class="bi bi-exclamation-triangle" style="font-size: 3rem;"></i>
-                        <h3 class="mt-3">加载失败</h3>
+                        <h3 class="mt-3">Failed to Load</h3>
                         <p>${escapeHtml(error.message)}</p>
-                        <a href="seminars.html" class="btn btn-primary mt-3">返回研讨会列表</a>
+                        <a href="seminars.html" class="btn btn-primary mt-3">Back to Seminar List</a>
                     </div>
                 `;
             }
