@@ -28,7 +28,7 @@ Participants interested in receiving seminar announcements by email are welcome 
 </table>
 
 All time in this webpage refers to Beijing Time (GMT+8).  
----
+
 <style>
 .seminar-item {
   display: flex;
