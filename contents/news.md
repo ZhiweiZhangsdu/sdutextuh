@@ -1,9 +1,8 @@
-## News
 
 ### 2026
 
 - <span class="news-tag paper">Paper</span>  
-   <h3 id="news-20260312">Our paper *“Title of the Paper”* has been accepted by </h3> 
+  Our paper *“Title of the Paper”* has been accepted by
   *Journal Name*, 2026.  
   [arXiv](https://arxiv.org/abs/xxxx.xxxxx)
 
@@ -42,6 +41,8 @@
 ### 2024
 
 - <span class="news-tag conference">Conference</span>  
-  Members of our group participated in  
+  <div id="news-20260312" class="news-entry">
+     Members of our group participated in  
   *International Workshop on Discrete Mathematics*,  
   April 2024, Shanghai, China.
+  </div>
