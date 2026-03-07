@@ -278,64 +278,32 @@
     const cardElement = document.getElementById('abstract-card');
     if (!cardElement) return;
 
-    // 1. 等待 MathJax 渲染完成
     if (window.MathJax) {
-        await MathJax.typesetPromise([cardElement]).catch(console.error);
+        await MathJax.typesetPromise([cardElement]);
     }
 
-    // 2. 将卡片滚动到可视区域中央（避免滚动导致的偏移）
-    cardElement.scrollIntoView({ behavior: 'auto', block: 'center' });
-    await new Promise(resolve => setTimeout(resolve, 200)); // 等待滚动稳定
-
-    // 3. 使用 html2canvas 截图
-    html2canvas(cardElement, {
-        scale: 2,
-        backgroundColor: '#ffffff',
-        allowTaint: false,
-        useCORS: true,
-        logging: true,
-        scrollX: 0,
-        scrollY: 0,
-        windowScroll: false,
-        onclone: async (clonedDoc, element) => {
-            if (clonedDoc.MathJax) {
-                await clonedDoc.MathJax.typesetPromise([element]).catch(console.error);
-            }
-        }
-    }).then(canvas => {
-        canvas.toBlob(async (blob) => {
-            try {
-                // 尝试写入剪贴板
-                await navigator.clipboard.write([
-                    new ClipboardItem({ [blob.type]: blob })
-                ]);
-                alert('✅ 截图已复制到剪贴板');
-            } catch (err) {
-                console.error('剪贴板写入失败:', err);
-                // 降级：在新窗口显示图片
-                const imgUrl = canvas.toDataURL('image/png');
-                const newWindow = window.open();
-                if (newWindow) {
-                    newWindow.document.write(`
-                        <html>
-                            <head><title>截图预览</title></head>
-                            <body style="margin:0; display:flex; justify-content:center; align-items:center; background:#f0f0f0;">
-                                <img src="${imgUrl}" style="max-width:100%; max-height:100vh; box-shadow:0 0 10px rgba(0,0,0,0.3);">
-                                <p style="position:fixed; bottom:10px; left:0; width:100%; text-align:center; background:rgba(255,255,255,0.8); padding:5px;">
-                                    右键图片选择“另存为”保存截图（自动复制失败）
-                                </p>
-                            </body>
-                        </html>
-                    `);
-                    newWindow.document.close();
-                } else {
-                    alert('❌ 无法打开新窗口，请使用系统截图工具 (Command+Shift+4)');
+    domtoimage.toPng(cardElement, {
+        bgcolor: '#ffffff',
+        scale: 2
+    }).then(dataUrl => {
+        // 尝试写入剪贴板
+        fetch(dataUrl)
+            .then(res => res.blob())
+            .then(async blob => {
+                try {
+                    await navigator.clipboard.write([
+                        new ClipboardItem({ [blob.type]: blob })
+                    ]);
+                    alert('✅ 截图已复制');
+                } catch (err) {
+                    // 降级：新窗口显示
+                    const newWindow = window.open();
+                    newWindow.document.write(`<img src="${dataUrl}" style="max-width:100%">`);
                 }
-            }
-        }, 'image/png');
+            });
     }).catch(error => {
-        console.error('截图生成失败:', error);
-        alert('❌ 截图生成失败：' + error.message);
+        console.error('dom-to-image 失败:', error);
+        alert('截图生成失败');
     });
 });
 
