@@ -4,7 +4,7 @@ The SDU Combinatorics Seminar focuses on recent research developments in combina
 
 This is a research-oriented seminar. Each session typically consists of an invited talk or a presentation by group members and visitors. The seminar schedule will be announced in advance and updated regularly on this page.
 
-Participants interested in receiving seminar announcements by email are welcome to contact Guanghui Wang: ghwang@sdu.edu.cn, <a href="https://www.imada.sdu.dk/u/jbj/" target="_blank" rel="noopener">Jørgen Bang-Jensen</a>: jbj@imada.sdu.dk and Yun Wang: yunwang@sdu.edu.cn.
+Participants interested in receiving seminar announcements by email are welcome to contact Guanghui Wang(ghwang@sdu.edu.cn), <a href="https://www.imada.sdu.dk/u/jbj/" target="_blank" rel="noopener">Jørgen Bang-Jensen</a>(jbj@imada.sdu.dk) and Yun Wang(yunwang@sdu.edu.cn).
 
 ---
 
