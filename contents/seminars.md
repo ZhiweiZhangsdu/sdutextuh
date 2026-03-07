@@ -59,7 +59,7 @@ All time in this webpage refers to Beijing Time (GMT+8).
   </div>
 
   <div class="seminar-content">
-    <strong>Title:</strong> The Hypergraph Removal Process<strong>Video:</strong> 
+    <strong>Title:</strong> The Hypergraph Removal Process <strong>Video:</strong> 
     <a href="https://space.bilibili.com/1131132367?spm_id_from=333.999.0.0"
        target="_blank" rel="noopener">
        Link
@@ -70,7 +70,7 @@ All time in this webpage refers to Beijing Time (GMT+8).
        Jaehoon Kim
     </a><br/>
     <strong>Time:</strong> 17:05–18:15
-    <strong>Venue:</strong> Online (Zoom)
+     <strong>Venue:</strong> Online (Zoom)
     
   </div>
 
@@ -85,9 +85,10 @@ All time in this webpage refers to Beijing Time (GMT+8).
   </div>
 
   <div class="seminar-content">
-    <strong>Title:</strong> Ramsey-Type Problems in Graph Theory<strong>Venue:</strong> Room 402, Mathematics Building
-    <strong>Speaker:</strong> Dr. XXX (XXX University)
-    <strong>Time:</strong> 15:30–17:00
+    <strong>Title:</strong> Ramsey-Type Problems in Graph Theory <br\>
+    
+    <strong>Speaker:</strong> Dr. XXX (XXX University) <br\>
+    <strong>Time:</strong> 15:30–17:00 <strong>Venue:</strong> Room 402, Mathematics Building
     
   </div>
 
