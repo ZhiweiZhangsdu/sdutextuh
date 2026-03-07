@@ -274,24 +274,30 @@
             }
 
             // 复制截图功能
-           copyScreenshotBtn.addEventListener('click', async function() {
+         copyScreenshotBtn.addEventListener('click', async function() {
     const cardElement = document.getElementById('abstract-card');
     if (!cardElement) return;
 
-    // 1. 等待原始文档中的 MathJax 渲染完成
+    // 1. 等待 MathJax 渲染完成
     if (window.MathJax) {
         await MathJax.typesetPromise([cardElement]).catch(console.error);
     }
 
-    // 2. 使用 html2canvas 截图
+    // 2. 将卡片滚动到可视区域中央（避免滚动导致的偏移）
+    cardElement.scrollIntoView({ behavior: 'auto', block: 'center' });
+    await new Promise(resolve => setTimeout(resolve, 200)); // 等待滚动稳定
+
+    // 3. 使用 html2canvas 截图
     html2canvas(cardElement, {
         scale: 2,
         backgroundColor: '#ffffff',
         allowTaint: false,
         useCORS: true,
-        logging: true,          // 开启日志便于调试（可选）
+        logging: true,
+        scrollX: 0,
+        scrollY: 0,
+        windowScroll: false,
         onclone: async (clonedDoc, element) => {
-            // 在克隆文档中也触发 MathJax 渲染，避免重影
             if (clonedDoc.MathJax) {
                 await clonedDoc.MathJax.typesetPromise([element]).catch(console.error);
             }
@@ -306,7 +312,7 @@
                 alert('✅ 截图已复制到剪贴板');
             } catch (err) {
                 console.error('剪贴板写入失败:', err);
-                // 降级：在新窗口显示图片，让用户手动保存
+                // 降级：在新窗口显示图片
                 const imgUrl = canvas.toDataURL('image/png');
                 const newWindow = window.open();
                 if (newWindow) {
