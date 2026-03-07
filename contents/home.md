@@ -1,47 +1,47 @@
 <div class="home-layout">
-  <div class="home-main">
-    <p>
-      Welcome to the homepage of the <strong>SDU Combinatorics Group</strong>, led by
-      <strong><a href="https://faculty.sdu.edu.cn/wangguanghui1/zh_CN/index.htm" target="_blank" rel="noopener">Prof. Guanghui Wang</a></strong>.
-    </p>
+<div class="home-main">
+<p>
+Welcome to the homepage of the <strong>SDU Combinatorics Group</strong>, led by
+<strong><a href="https://faculty.sdu.edu.cn/wangguanghui1/zh_CN/index.htm" target="_blank" rel="noopener">Prof. Guanghui Wang</a></strong>.
+</p>
 
-    <h2>Introduction</h2>
-    <p>
-      The SDU Combinatorics Group focuses on fundamental problems in combinatorics,
-      with particular emphasis on the following research themes.
-    </p>
+<h2>Introduction</h2>
+<p>
+The SDU Combinatorics Group focuses on fundamental problems in combinatorics,
+with particular emphasis on the following research themes.
+</p>
 
-    <ul>
-      <li>Graph theory</li>
-      <li>Probabilistic methods</li>
-      <li>Extremal combinatorics</li>
-      <li>Discrete mathematics</li>
-    </ul>
-  </div>
+<ul>
+<li>Graph theory</li>
+<li>Probabilistic methods</li>
+<li>Extremal combinatorics</li>
+<li>Discrete mathematics</li>
+</ul>
+</div>
 
-  <aside class="home-news">
-    <div class="news-box">
-      <div class="news-box-header">
-        <h3>News</h3>
-        <a href="news.html" class="news-more">More</a>
-      </div>
+<aside class="home-news">
+<div class="news-box">
+<div class="news-box-header">
+<h3>News</h3>
+<a href="news.html" class="news-more">More</a>
+</div>
 
-      <div class="news-item">
-        <div class="news-date">2026-03-12</div>
-        <a href="news.html">Seminar by Prof. Hong Liu will be held on March 12.</a>
-      </div>
+<div class="news-item">
+<div class="news-date">2026-03-12</div>
+<a href="news.html">Seminar by Prof. Hong Liu will be held on March 12.</a>
+</div>
 
-      <div class="news-item">
-        <div class="news-date">2026-02-20</div>
-        <a href="news.html">New seminar schedule for Spring 2026 has been announced.</a>
-      </div>
+<div class="news-item">
+<div class="news-date">2026-02-20</div>
+<a href="news.html">New seminar schedule for Spring 2026 has been announced.</a>
+</div>
 
-      <div class="news-item">
-        <div class="news-date">2026-01-08</div>
-        <a href="news.html">The group website has been updated.</a>
-      </div>
-    </div>
-  </aside>
+<div class="news-item">
+<div class="news-date">2026-01-08</div>
+<a href="news.html">The group website has been updated.</a>
+</div>
+</div>
+</aside>
 </div>
 <!--
 ## Books
