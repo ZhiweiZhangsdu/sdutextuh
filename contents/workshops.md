@@ -5,9 +5,9 @@ Unless otherwise stated, all dates and times refer to Beijing Time (GMT+8).
 ---
 
 ## Contents
-- [Workshops](#workshops)
-- [Summer School](#summer-school)
-- [Courses](#courses)
+- [Workshops](#workshops)<br/>
+- [Summer School](#summer-school)<br/>
+- [Courses](#courses)<br/>
 
 
 ## <a id="workshops"></a>Workshops
