@@ -1,10 +1,10 @@
 {
     "1": {
-        "name": "张三",
-        "title": "图论中的拉姆齐数新进展",
+        "name": "Zhiwei Zhang",
+        "title": "Arbitrary orientations of cycles in oriented graphs",
         "date": "2025-03-15",
-        "abstract": "本文讨论了拉姆齐数 $R(3,4)$ 的最新上下界，利用概率方法与代数构造证明了 $R(3,4) \\leq 30$。同时介绍了拉姆齐理论在计算机科学中的应用。",
-        "bio": "张三，山东大学数学学院教授，博士生导师。主要从事极值组合学、拉姆齐理论研究。"
+        "abstract": "",
+        "bio": "Zhiwei Zhang, a PhD in Shandong University, he is intersted in digraphs and decompostion."
     },
     "2": {
         "name": "李四",
