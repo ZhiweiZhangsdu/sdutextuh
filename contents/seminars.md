@@ -41,7 +41,7 @@ All time in this webpage refers to Beijing Time (GMT+8).
   <div class="seminar-content">
     <strong>Title:</strong> <a href="abstract.html?id=1" target="_blank">Zhiwei Zhang</a><br/>
     <strong>Speaker:</strong> Prof. <a href="https://www.ibs.re.kr/ecopro/hongliu/" target="_blank" rel="noopener">Hong Liu</a><br/>
-    <strong>Time:</strong> 16:00–17:30<br/>
+    <strong>Time:</strong> 16:00–17:30
     <strong>Venue:</strong> Room 301, Mathematics Building / Online (Zoom)
   </div>
   
@@ -59,19 +59,19 @@ All time in this webpage refers to Beijing Time (GMT+8).
   </div>
 
   <div class="seminar-content">
-    <strong>Title:</strong> The Hypergraph Removal Process<br/>
+    <strong>Title:</strong> The Hypergraph Removal Process<strong>Video:</strong> 
+    <a href="https://space.bilibili.com/1131132367?spm_id_from=333.999.0.0"
+       target="_blank" rel="noopener">
+       Link
+    </a>
     <strong>Speaker:</strong> Prof. 
     <a href="https://sites.google.com/view/jaehoon-kim"
        target="_blank" rel="noopener">
        Jaehoon Kim
     </a><br/>
-    <strong>Time:</strong> 17:05–18:15<br/>
-    <strong>Venue:</strong> Online (Zoom)<br/>
-    <strong>Video:</strong> 
-    <a href="https://space.bilibili.com/1131132367?spm_id_from=333.999.0.0"
-       target="_blank" rel="noopener">
-       Link
-    </a>
+    <strong>Time:</strong> 17:05–18:15
+    <strong>Venue:</strong> Online (Zoom)
+    
   </div>
 
 </div>
@@ -85,10 +85,10 @@ All time in this webpage refers to Beijing Time (GMT+8).
   </div>
 
   <div class="seminar-content">
-    <strong>Title:</strong> Ramsey-Type Problems in Graph Theory<br/>
-    <strong>Speaker:</strong> Dr. XXX (XXX University)<br/>
-    <strong>Time:</strong> 15:30–17:00<br/>
-    <strong>Venue:</strong> Room 402, Mathematics Building
+    <strong>Title:</strong> Ramsey-Type Problems in Graph Theory<strong>Venue:</strong> Room 402, Mathematics Building
+    <strong>Speaker:</strong> Dr. XXX (XXX University)
+    <strong>Time:</strong> 15:30–17:00
+    
   </div>
 
 
