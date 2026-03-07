@@ -293,7 +293,7 @@ section .main-body{
 }
 
 .home-news {
-  width: 320px;
+  width: 500px;
   flex-shrink: 0;
 }
 
