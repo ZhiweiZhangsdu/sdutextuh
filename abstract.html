@@ -1,49 +1,315 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>论文摘要</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <meta name="description" content="Abstract - SDU Combinatorics Group" />
+    <meta name="author" content="SDU Combinatorics Group" />
+    <title>Abstract | SDU Combinatorics Group</title>
+
+    <!-- Icon -->
+    <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
+
+    <!-- Bootstrap Icons (LOCAL) -->
+    <link rel="stylesheet" href="static/vendor/bootstrap-icons/bootstrap-icons.css" />
+
+    <!-- System fonts (No Google Fonts) -->
     <style>
-        body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; }
-        #abstract-container { border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
-        .back-link { margin-top: 20px; display: inline-block; }
+        :root {
+            --bs-font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+                Arial, sans-serif;
+        }
+    </style>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/styles.css" />
+    <link rel="stylesheet" href="static/css/main.css" />
+
+    <!-- JS (LOCAL) -->
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/marked.min.js"></script>
+    <script src="static/js/js-yaml.min.js"></script>
+
+    <!-- MathJax (LOCAL) -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEnvironments: true,
+                processRefs: true,
+                tags: 'all'
+            }
+        };
+    </script>
+    <script defer src="static/js/mathjax/tex-mml-chtml.js"></script>
+
+    <!-- html2canvas (CDN) for screenshot copy -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/6.0.0-alpha.2/html2canvas.min.js"></script>
+
+    <!-- Core JS (版权等) -->
+    <script src="static/js/scripts.js"></script>
+
+    <style>
+        .abstract-card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .abstract-card .name {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1e3c72;
+        }
+        .abstract-card .title {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #2a5298;
+            margin-top: 0.5rem;
+        }
+        .abstract-card .date {
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+        }
+        .abstract-card .abstract-label {
+            font-weight: 600;
+            color: #1e3c72;
+            border-bottom: 2px solid #2a5298;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .btn-outline-primary {
+            border-color: #2a5298;
+            color: #2a5298;
+        }
+        .btn-outline-primary:hover {
+            background-color: #2a5298;
+            color: white;
+        }
     </style>
 </head>
+
 <body>
-    <div id="abstract-container">
-        <h1 id="paper-title"></h1>
-        <p id="paper-authors"></p>
-        <p id="paper-abstract"></p>
-    </div>
-    <a href="seminars.html" class="back-link">← 返回列表</a>
+    <!-- Navigation -->
+    <nav class="header navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+        <div class="container px-5">
+            <a class="navbar-brand fw-bold" href="index.html">SDU Comb Group</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                MENU <i class="bi bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                    <li class="nav-item"><a class="nav-link me-lg-3" href="index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link me-lg-3" href="members.html">MEMBERS</a></li>
+                    <li class="nav-item"><a class="nav-link me-lg-3" href="conferences.html">CONFERENCES</a></li>
+                    <li class="nav-item"><a class="nav-link me-lg-3" href="workshops.html">WORKSHOPS</a></li>
+                    <li class="nav-item"><a class="nav-link me-lg-3" href="seminars.html">SEMINARS</a></li>
+                    <li class="nav-item"><a class="nav-link me-lg-3" href="news.html">NEWS</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Top Section -->
+    <section class="top-section" style="background-image: url('static/assets/img/background.jpeg');">
+        <div class="top-section-content">
+            <div class="container px-5">
+                <h2 class="text-white display-3 lh-1 font-alt">&nbsp;</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- Abstract Content -->
+    <section class="bg-gradient-primary-to-secondary-gray py-5" id="abstract">
+        <div class="container px-5">
+            <!-- 返回按钮 -->
+            <div class="mb-4">
+                <a href="javascript:history.back()" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left"></i> 返回
+                </a>
+                <a href="seminars.html" class="btn btn-outline-secondary ms-2">
+                    <i class="bi bi-grid"></i> 所有研讨会
+                </a>
+            </div>
+
+            <!-- 卡片容器（动态填充） -->
+            <div id="abstract-container">
+                <div class="text-center py-5" id="loading-spinner">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">加载中...</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 操作按钮 -->
+            <div class="d-flex gap-3 justify-content-center mt-4" id="action-buttons" style="display: none !important;">
+                <button class="btn btn-outline-primary btn-lg" id="copy-text-btn">
+                    <i class="bi bi-files"></i> 复制文字
+                </button>
+                <button class="btn btn-outline-primary btn-lg" id="copy-screenshot-btn">
+                    <i class="bi bi-camera"></i> 复制截图
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bottom text-center py-5">
+        <div class="container px-5">
+            <div class="text-white-50 small">
+                <div id="copyright-text" class="mb-2"></div>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // 获取URL中的id参数
-        const urlParams = new URLSearchParams(window.location.search);
-        const paperId = urlParams.get('id');
+        (async function() {
+            // 获取URL参数 id
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
 
-        // 如果没有id，显示错误信息
-        if (!paperId) {
-            document.getElementById('abstract-container').innerHTML = '<p style="color:red;">错误：未指定论文ID。</p>';
-        } else {
-            // 加载摘要数据文件
-            fetch('data/abstracts.json')
-                .then(response => response.json())
-                .then(data => {
-                    const paper = data[paperId];
-                    if (paper) {
-                        document.getElementById('paper-title').textContent = paper.title;
-                        document.getElementById('paper-authors').textContent = '作者：' + paper.authors;
-                        document.getElementById('paper-abstract').textContent = paper.abstract;
-                    } else {
-                        document.getElementById('abstract-container').innerHTML = '<p style="color:red;">未找到该论文的摘要。</p>';
+            const container = document.getElementById('abstract-container');
+            const loadingSpinner = document.getElementById('loading-spinner');
+            const actionButtonsDiv = document.getElementById('action-buttons');
+            const copyTextBtn = document.getElementById('copy-text-btn');
+            const copyScreenshotBtn = document.getElementById('copy-screenshot-btn');
+
+            // 如果没有id，直接显示错误
+            if (!id) {
+                if (loadingSpinner) loadingSpinner.style.display = 'none';
+                container.innerHTML = `
+                    <div class="alert alert-warning text-center py-5" role="alert">
+                        <i class="bi bi-exclamation-triangle" style="font-size: 3rem;"></i>
+                        <h3 class="mt-3">缺少ID参数</h3>
+                        <p>请在URL中指定 ?id=xxx</p>
+                        <a href="seminars.html" class="btn btn-primary mt-3">返回研讨会列表</a>
+                    </div>
+                `;
+                return;
+            }
+
+            try {
+                // 从外部JSON文件加载数据
+                // 数据文件路径可以根据需要修改，这里假设放在 static/data/abstracts.json
+                const response = await fetch('static/data/abstracts.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status} - 无法加载数据文件`);
+                }
+                const abstractsData = await response.json();
+
+                // 根据id获取对应条目
+                const data = abstractsData[id];
+                if (!data) {
+                    throw new Error(`ID "${id}" 不存在`);
+                }
+
+                // 构建卡片HTML（注意abstract和bio中可能包含LaTeX，直接用）
+                const cardHtml = `
+                    <div id="abstract-card" class="abstract-card">
+                        <div class="name">${escapeHtml(data.name) || '未知'}</div>
+                        <div class="title">${escapeHtml(data.title) || '无标题'}</div>
+                        <div class="date"><i class="bi bi-calendar-event"></i> ${escapeHtml(data.date) || ''}</div>
+                        <div class="abstract-label">摘要</div>
+                        <div class="abstract-content fs-5 mb-4">${data.abstract || ''}</div>
+                        ${data.bio ? `<div class="abstract-label">报告人简介</div><div class="bio-content">${data.bio}</div>` : ''}
+                    </div>
+                `;
+
+                // 隐藏加载动画，显示卡片
+                if (loadingSpinner) loadingSpinner.style.display = 'none';
+                container.innerHTML = cardHtml;
+                actionButtonsDiv.style.display = 'flex';
+
+                // 触发MathJax重新渲染（确保公式正确显示）
+                if (window.MathJax) {
+                    MathJax.typesetPromise ? MathJax.typesetPromise() : MathJax.typeset();
+                }
+
+                // ---------- 复制文字功能 ----------
+                copyTextBtn.addEventListener('click', async function() {
+                    let textToCopy = `报告人：${data.name || ''}\n`;
+                    textToCopy += `标题：${data.title || ''}\n`;
+                    textToCopy += `日期：${data.date || ''}\n`;
+                    textToCopy += `摘要：${(data.abstract || '').replace(/\$+/g, '')}`; // 移除$符号便于阅读
+                    if (data.bio) {
+                        textToCopy += `\n简介：${data.bio}`;
                     }
-                })
-                .catch(error => {
-                    console.error('加载摘要数据失败:', error);
-                    document.getElementById('abstract-container').innerHTML = '<p style="color:red;">加载数据失败，请稍后重试。</p>';
+                    try {
+                        await navigator.clipboard.writeText(textToCopy);
+                        alert('文字已复制到剪贴板');
+                    } catch (err) {
+                        alert('复制失败，请手动复制');
+                    }
                 });
-        }
+
+                // ---------- 复制截图功能 ----------
+                copyScreenshotBtn.addEventListener('click', function() {
+                    const cardElement = document.getElementById('abstract-card');
+                    if (!cardElement) return;
+
+                    html2canvas(cardElement, {
+                        scale: 2,
+                        backgroundColor: '#ffffff',
+                        allowTaint: false,
+                        useCORS: true
+                    }).then(canvas => {
+                        canvas.toBlob(async function(blob) {
+                            try {
+                                await navigator.clipboard.write([
+                                    new ClipboardItem({
+                                        [blob.type]: blob
+                                    })
+                                ]);
+                                alert('截图已复制到剪贴板');
+                            } catch (err) {
+                                console.error(err);
+                                alert('复制截图失败，可能是因为浏览器不支持或权限不足。');
+                            }
+                        });
+                    }).catch(error => {
+                        console.error('截图失败:', error);
+                        alert('截图生成失败，请稍后重试。');
+                    });
+                });
+
+                // 简单的防XSS转义函数（用于非HTML内容的输出）
+                function escapeHtml(unsafe) {
+                    if (!unsafe) return unsafe;
+                    return unsafe
+                        .replace(/&/g, "&amp;")
+                        .replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;")
+                        .replace(/"/g, "&quot;")
+                        .replace(/'/g, "&#039;");
+                }
+
+            } catch (error) {
+                // 处理加载或解析错误
+                if (loadingSpinner) loadingSpinner.style.display = 'none';
+                container.innerHTML = `
+                    <div class="alert alert-danger text-center py-5" role="alert">
+                        <i class="bi bi-exclamation-triangle" style="font-size: 3rem;"></i>
+                        <h3 class="mt-3">加载失败</h3>
+                        <p>${escapeHtml(error.message)}</p>
+                        <a href="seminars.html" class="btn btn-primary mt-3">返回研讨会列表</a>
+                    </div>
+                `;
+            }
+
+            // 设置版权年份
+            const copyrightEl = document.getElementById('copyright-text');
+            if (copyrightEl) {
+                const year = new Date().getFullYear();
+                copyrightEl.innerHTML = `© ${year} SDU Combinatorics Group. All rights reserved.`;
+            }
+        })();
     </script>
 </body>
+
 </html>
