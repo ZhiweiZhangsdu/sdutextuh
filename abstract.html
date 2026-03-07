@@ -131,10 +131,10 @@
             <!-- 返回按钮 -->
             <div class="mb-4">
                 <a href="javascript:history.back()" class="btn btn-outline-secondary">
-                    <i class="bi bi-arrow-left"></i> 返回
+                    <i class="bi bi-arrow-left"></i> 返回(Back)
                 </a>
                 <a href="seminars.html" class="btn btn-outline-secondary ms-2">
-                    <i class="bi bi-grid"></i> 所有研讨会
+                    <i class="bi bi-grid"></i> 所有研讨会(All seminars)
                 </a>
             </div>
 
@@ -142,7 +142,7 @@
             <div id="abstract-container">
                 <div class="text-center py-5" id="loading-spinner">
                     <div class="spinner-border text-primary" role="status">
-                        <span class="visually-hidden">加载中...</span>
+                        <span class="visually-hidden">加载中...(Loading...)</span>
                     </div>
                 </div>
             </div>
@@ -150,10 +150,10 @@
             <!-- 操作按钮 -->
             <div class="d-flex gap-3 justify-content-center mt-4" id="action-buttons" style="display: none !important;">
                 <button class="btn btn-outline-primary btn-lg" id="copy-text-btn">
-                    <i class="bi bi-files"></i> 复制文字
+                    <i class="bi bi-files"></i> 复制文字(Copy text)
                 </button>
                 <button class="btn btn-outline-primary btn-lg" id="copy-screenshot-btn">
-                    <i class="bi bi-camera"></i> 复制截图
+                    <i class="bi bi-camera"></i> 复制截图(Copy screenshot)
                 </button>
             </div>
         </div>
@@ -215,9 +215,9 @@
                         <div class="name">${escapeHtml(data.name) || '未知'}</div>
                         <div class="title">${escapeHtml(data.title) || '无标题'}</div>
                         <div class="date"><i class="bi bi-calendar-event"></i> ${escapeHtml(data.date) || ''}</div>
-                        <div class="abstract-label">摘要</div>
+                        <div class="abstract-label">Abstract</div>
                         <div class="abstract-content fs-5 mb-4">${data.abstract || ''}</div>
-                        ${data.bio ? `<div class="abstract-label">报告人简介</div><div class="bio-content">${data.bio}</div>` : ''}
+                        ${data.bio ? `<div class="abstract-label">Introduction</div><div class="bio-content">${data.bio}</div>` : ''}
                     </div>
                 `;
 
