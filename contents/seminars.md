@@ -44,10 +44,6 @@ All time in this webpage refers to Beijing Time (GMT+8).
     <strong>Time:</strong> 16:00–17:30<br/>
     <strong>Venue:</strong> Room 301, Mathematics Building / Online (Zoom)
   </div>
-
-  <div class="item-poster">
-    <img src="static/assets/img/graph_theory.jpeg" alt="Seminar poster">
-  </div>
   
 </div>
 
@@ -78,10 +74,6 @@ All time in this webpage refers to Beijing Time (GMT+8).
     </a>
   </div>
 
-  <div class="item-poster">
-    <img src="static/assets/img/graph_theory.jpeg" alt="Seminar poster">
-  </div>
-
 </div>
 
 
@@ -99,9 +91,6 @@ All time in this webpage refers to Beijing Time (GMT+8).
     <strong>Venue:</strong> Room 402, Mathematics Building
   </div>
 
-  <div class="item-poster">
-    <img src="static/assets/img/graph_theory.jpeg" alt="Seminar poster">
-  </div>
 
 </div>
 
