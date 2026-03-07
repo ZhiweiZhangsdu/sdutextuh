@@ -96,9 +96,9 @@ All time in this webpage refers to Beijing Time (GMT+8).
   </div>
 
   <div class="seminar-content">
-    <strong>Title:</strong> Ramsey-Type Problems in Graph Theory <br\>
+    <strong>Title:</strong> Ramsey-Type Problems in Graph Theory <br/>
     
-    <strong>Speaker:</strong> Dr. XXX (XXX University) <br\>
+    <strong>Speaker:</strong> Dr. XXX (XXX University) <br/>
     <strong>Time:</strong> 15:30–17:00 <strong>Venue:</strong> Room 402, Mathematics Building
     
   </div>
