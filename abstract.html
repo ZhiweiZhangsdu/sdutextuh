@@ -34,17 +34,18 @@
     <script src="static/js/js-yaml.min.js"></script>
 
     <!-- MathJax (CDN) -->
-    <script>
-        MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEnvironments: true,
-                processRefs: true,
-                tags: 'all'
-            }
-        };
-    </script>
+<script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <!-- html2canvas (CDN) for screenshot copy -->
@@ -277,29 +278,38 @@
     const cardElement = document.getElementById('abstract-card');
     if (!cardElement) return;
 
+    // 1. 等待原始文档 MathJax 完成
     if (window.MathJax) {
-        await MathJax.typesetPromise([cardElement]).catch(console.error);
+        await MathJax.typesetPromise([cardElement]);
     }
+    // 2. 强制浏览器重绘
+    await new Promise(resolve => requestAnimationFrame(resolve));
+    // 3. 再等待 200ms
+    await new Promise(resolve => setTimeout(resolve, 200));
 
     html2canvas(cardElement, {
         scale: 2,
         backgroundColor: '#ffffff',
         allowTaint: false,
         useCORS: true,
-        onclone: function(clonedDoc, element) {
+        logging: true,
+        onclone: async (clonedDoc, element) => {
             if (clonedDoc.MathJax) {
-                return clonedDoc.MathJax.typesetPromise([element]).catch(console.error);
+                await clonedDoc.MathJax.typesetPromise([element]);
+                await new Promise(resolve => requestAnimationFrame(resolve));
+                await new Promise(resolve => setTimeout(resolve, 100));
             }
         }
     }).then(canvas => {
-        canvas.toBlob(async function(blob) {
+        canvas.toBlob(async (blob) => {
             try {
                 await navigator.clipboard.write([
                     new ClipboardItem({ [blob.type]: blob })
                 ]);
                 alert('✅ 截图已复制到剪贴板');
             } catch (err) {
-                console.error(err);
+                console.error('剪贴板写入失败:', err);
+                // 降级方案：在新窗口显示图片
                 const imgUrl = canvas.toDataURL('image/png');
                 const newWindow = window.open();
                 if (newWindow) {
