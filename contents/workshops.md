@@ -20,7 +20,7 @@ Unless otherwise stated, all dates and times refer to Beijing Time (GMT+8).
   *Location:* Jinan, China  *Date:* May 12–14, 2026  
   
 
-- **Mini-Workshop on Graph Theory and Applications**  
+- **Mini-Workshop on Graph Theory and Applications**  <a href="static/assets/img/2019_summer_school.jpeg" target="_blank" rel="noopener">poster</a><br/>
   *Location:* Beijing, China  
   *Date:* March 22–23, 2026  
   *Role:* Invited Participant  
