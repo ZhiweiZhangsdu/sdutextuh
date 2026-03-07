@@ -28,12 +28,11 @@ Participants interested in receiving seminar announcements by email are welcome 
 </table>
 
 All time in this webpage refers to Beijing Time (GMT+8).  
-
 ---
 <style>
 .seminar-item {
   display: flex;
-  align-items: stretch;   /* 关键：左右两块等高 */
+  align-items: stretch;
   gap: 1rem;
   margin-bottom: 1.25rem;
 }
@@ -44,10 +43,9 @@ All time in this webpage refers to Beijing Time (GMT+8).
   background: #f8f9fa;
   border-radius: 12px;
   text-align: center;
-
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* 日期内容垂直居中 */
+  justify-content: center;
   flex-shrink: 0;
 }
 
@@ -56,6 +54,7 @@ All time in this webpage refers to Beijing Time (GMT+8).
   line-height: 1.8;
 }
 </style>
+
 ### Upcoming Talks
 
 <div class="seminar-item">
@@ -66,21 +65,17 @@ All time in this webpage refers to Beijing Time (GMT+8).
 
   <div class="seminar-content">
     <strong>Title:</strong>
-    <a href="abstract.html?id=1" target="_blank">Zhiwei Zhang</a><br/>
+    <a href="abstract.html?id=1" target="_blank">Zhiwei Zhang</a><br />
     <strong>Speaker:</strong>
     Prof.
     <a href="https://www.ibs.re.kr/ecopro/hongliu/" target="_blank" rel="noopener">Hong Liu</a><br />
-    <strong>Time:</strong> 16:00–17:30<br/>
+    <strong>Time:</strong> 16:00–17:30<br />
     <strong>Venue:</strong> Room 301, Mathematics Building / Online (Zoom)
   </div>
 </div>
 
-
-
 ### Previous Talks
 
-<div class="seminar-item">
-  
 <div class="seminar-item">
   <div class="seminar-date">
     <strong style="font-size: 20px;">Dec 16</strong><br />
@@ -89,18 +84,17 @@ All time in this webpage refers to Beijing Time (GMT+8).
 
   <div class="seminar-content">
     <strong>Title:</strong>
-    The Hypergraph Removal Process <strong>Video:</strong> 
-    <a href="https://space.bilibili.com/1131132367?spm_id_from=333.999.0.0"
-       target="_blank" rel="noopener">
-       Link
-    </a><br/>
+    The Hypergraph Removal Process
+    <strong>Video:</strong>
+    <a href="https://space.bilibili.com/1131132367?spm_id_from=333.999.0.0" target="_blank" rel="noopener">
+      Link
+    </a><br />
     <strong>Speaker:</strong>
-    <a href="https://sites.google.com/view/jaehoon-kim"
-       target="_blank" rel="noopener">
-       Jaehoon Kim
-    </a><br/>
-    <strong>Time:</strong> 17:05–18:15
-     <strong>Venue:</strong> Online (Zoom)
+    <a href="https://sites.google.com/view/jaehoon-kim" target="_blank" rel="noopener">
+      Jaehoon Kim
+    </a><br />
+    <strong>Time:</strong> 17:05–18:15<br />
+    <strong>Venue:</strong> Online (Zoom)
   </div>
 </div>
 
