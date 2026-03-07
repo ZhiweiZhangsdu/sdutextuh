@@ -99,7 +99,7 @@
             position: absolute;
             top: 1rem;
             right: 1rem;
-            width: 60px;
+            width: 25%;
             height: auto;
         }
 
@@ -274,43 +274,46 @@
 
             // 复制截图功能
             copyScreenshotBtn.addEventListener('click', async function() {
-                const cardElement = document.getElementById('abstract-card');
-                if (!cardElement) return;
+    const cardElement = document.getElementById('abstract-card');
+    if (!cardElement) return;
 
-                if (window.MathJax) {
-                    await MathJax.typesetPromise([cardElement]).catch(console.error);
+    if (window.MathJax) {
+        await MathJax.typesetPromise([cardElement]).catch(console.error);
+    }
+
+    html2canvas(cardElement, {
+        scale: 2,
+        backgroundColor: '#ffffff',
+        allowTaint: false,
+        useCORS: true,
+        onclone: function(clonedDoc, element) {
+            if (clonedDoc.MathJax) {
+                return clonedDoc.MathJax.typesetPromise([element]).catch(console.error);
+            }
+        }
+    }).then(canvas => {
+        canvas.toBlob(async function(blob) {
+            try {
+                await navigator.clipboard.write([
+                    new ClipboardItem({ [blob.type]: blob })
+                ]);
+                alert('✅ 截图已复制到剪贴板');
+            } catch (err) {
+                console.error(err);
+                const imgUrl = canvas.toDataURL('image/png');
+                const newWindow = window.open();
+                if (newWindow) {
+                    newWindow.document.write(`<img src="${imgUrl}" style="max-width:100%" alt="截图"><p>右键图片选择“另存为”保存截图</p>`);
+                } else {
+                    alert('❌ 无法自动复制，请手动截图。');
                 }
-
-                html2canvas(cardElement, {
-                    scale: 2,
-                    backgroundColor: '#ffffff',
-                    allowTaint: false,
-                    useCORS: true
-                }).then(canvas => {
-                    canvas.toBlob(async function(blob) {
-                        try {
-                            await navigator.clipboard.write([
-                                new ClipboardItem({
-                                    [blob.type]: blob
-                                })
-                            ]);
-                            alert('✅ 截图已复制到剪贴板');
-                        } catch (err) {
-                            console.error(err);
-                            const imgUrl = canvas.toDataURL('image/png');
-                            const newWindow = window.open();
-                            if (newWindow) {
-                                newWindow.document.write(`<img src="${imgUrl}" style="max-width:100%" alt="截图"><p>右键图片选择“另存为”保存截图</p>`);
-                            } else {
-                                alert('❌ 无法自动复制，请手动截图。');
-                            }
-                        }
-                    }, 'image/png');
-                }).catch(error => {
-                    console.error('截图失败:', error);
-                    alert('❌ 截图生成失败：' + error.message);
-                });
-            });
+            }
+        }, 'image/png');
+    }).catch(error => {
+        console.error('截图失败:', error);
+        alert('❌ 截图生成失败：' + error.message);
+    });
+});
 
         } catch (error) {
             loadingSpinner.style.display = 'none';
