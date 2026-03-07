@@ -8,8 +8,10 @@ Professor, Shandong University
 ## Members
 
 ### Postdoctoral Researchers
-- **Name** — Research area
-
+- **Yun Wang** — Research area
+- **Wenling Zhou** — Research area
+- **Wanting Sun** — Research area
+- **Qiancheng Ouyang** — Research area
 ### Ph.D. Students
 - **Name** — Research area
 
